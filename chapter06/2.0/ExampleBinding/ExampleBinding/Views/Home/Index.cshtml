@@ -1,0 +1,50 @@
+﻿@model ProductModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h1>Click Submit to send the model</h1>
+<form asp-action="EditProduct">
+    <div class="form-group">
+        <label asp-for="Id"></label>
+        <input class="form-control" asp-for="Id" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input class="form-control" asp-for="Name" />
+    </div>
+    <div class="form-group">
+        <label asp-for="SellPrice"></label>
+        <input class="form-control" asp-for="SellPrice" />
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+<h1>Click Submit to send a form with two models</h1>
+<p>Binding to multiple arguments is rare, so you need to do more work to bind the model correctly, and can't just use the tag helpers</p>
+<form asp-action="EditTwoProducts">
+    <div class="form-group">
+        <label>Product 1 Id</label>
+        <input class="form-control" name="product1.@nameof(Model.Id)" />
+    </div>
+    <div class="form-group">
+        <label>Product 1 Name</label>
+        <input class="form-control" name="product1.@nameof(Model.Name)" />
+    </div>
+    <div class="form-group">
+        <label>Product 1 SellPrice</label>
+        <input class="form-control" name="product1.@nameof(Model.SellPrice)" />
+    </div>
+    <div class="form-group">
+        <label>Product 2 Id</label>
+        <input class="form-control" name="product2.@nameof(Model.Id)" />
+    </div>
+    <div class="form-group">
+        <label>Product 2 Name</label>
+        <input class="form-control" name="product2.@nameof(Model.Name)" />
+    </div>
+    <div class="form-group">
+        <label>Product 2 SellPrice</label>
+        <input class="form-control" name="product2.@nameof(Model.SellPrice)" />
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>

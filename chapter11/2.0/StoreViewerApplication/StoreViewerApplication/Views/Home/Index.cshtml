@@ -1,0 +1,48 @@
+﻿@model MapDisplaySettings
+@{
+    ViewData["Title"] = Model.AppTitle;
+}
+<h3>@ViewData["Title"]</h3>
+<h4>Based on <a href="https://developers.google.com/maps/documentation/javascript/adding-a-google-map">Google Maps documentation</a></h4>
+@if (Model.ShowCopyright)
+{
+    <p>Mine! Hands off! ;)</p>
+}
+<div id="map"></div>
+<script>
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: @Model.DefaultZoomLevel,
+            center: {
+                lat: @Model.DefaultLocation.Latitude,
+                lng: @Model.DefaultLocation.Longitude
+          }
+        });
+
+        // request list of stores from web api
+        var request = new XMLHttpRequest();
+            request.open('GET', '/Stores', true);
+
+            request.onload = function () {
+                if (request.status >= 200 && request.status < 400) {
+                    // Success!
+                    var stores = JSON.parse(request.responseText);
+                    for (var i = 0; i < stores.length; i++)
+                    {
+                        var store = stores[i];
+                        var coords = store.location;
+                        var latLng = new google.maps.LatLng(coords.latitude, coords.longitude);
+                        var marker = new google.maps.Marker({
+                            position: latLng,
+                            map: map,
+                            title: store.name
+                        });
+                    }
+                }
+            };
+            request.send();
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?callback=initMap">
+</script>

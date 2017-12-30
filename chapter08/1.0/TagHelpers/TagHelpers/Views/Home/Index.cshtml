@@ -1,0 +1,78 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Success";
+}
+<form asp-action="Index">
+    <div class="input-group">
+        <label asp-for="Boolean"></label>
+        <input asp-for="Boolean" />
+    </div>
+    <div class="input-group">
+        <label asp-for="Byte"></label>
+        <input asp-for="Byte" />
+    </div>
+    <div class="input-group">
+        <label asp-for="DateTime"></label>
+        <input asp-for="DateTime" />
+    </div>
+    <div class="input-group">
+        <label asp-for="Decimal"></label>
+        <input asp-for="Decimal" />
+    </div>
+    <div class="input-group">
+        <label asp-for="Decimal">Decimal with 000.000 format</label>
+        <input asp-for="Decimal" asp-format="000.000" />
+    </div>
+    <div class="input-group">
+        <label asp-for="Double"></label>
+        <input asp-for="Double" />
+    </div>
+    <div class="input-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+    </div>
+    <div class="input-group">
+        <label asp-for="Float"></label>
+        <input asp-for="Float" />
+    </div>
+    <div class="input-group">
+        <label asp-for="HiddenInput"></label>
+        <input asp-for="HiddenInput" />
+    </div>
+    <div class="input-group">
+        <label asp-for="Int"></label>
+        <input asp-for="Int" />
+    </div>
+    <div class="input-group">
+        <label asp-for="IntAsText"></label>
+        <input asp-for="IntAsText" />
+    </div>
+    <div class="input-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" />
+    </div>
+    <div class="input-group">
+        <label asp-for="Phone"></label>
+        <input asp-for="Phone" />
+    </div>
+    <div class="input-group">
+        <label asp-for="String"></label>
+        <input asp-for="String" />
+    </div>
+    <div class="input-group">
+        <label asp-for="StringAsDate"></label>
+        <input asp-for="StringAsDate" />
+    </div>
+    <div class="input-group">
+        <label asp-for="Url"></label>
+        <input asp-for="Url" />
+    </div>
+    <div class="input-group">
+        <label asp-for="Multiline"></label>
+        <textarea asp-for="Multiline"></textarea>
+    </div>
+    <p>Submit the form to see the validation summay:</p>
+    <button type="submit">Submit</button>
+
+    <div asp-validation-summary="All"></div>
+</form>

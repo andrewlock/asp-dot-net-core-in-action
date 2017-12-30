@@ -1,0 +1,16 @@
+﻿@{
+    var showContent = true;
+}
+
+@if(showContent)
+{
+    <p>The content to show</p>
+}
+
+<p if="showContent">
+    Rendered when <code>showContent</code> is true
+</p>
+
+<p if="!showContent">
+    Rendered when <code>showContent</code> is false
+</p>

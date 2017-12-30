@@ -1,0 +1,10 @@
+﻿@model ICollection<RecipeSummaryViewModel>
+
+<div class="panel panel-default" style="margin-top: 20px">
+    <table class="table table-striped">
+        @foreach (var recipe in Model)
+        {
+            <tr><td><a asp-action="View" asp-controller="Recipe" asp-route-id="recipe.Id">@recipe.Name</a></td></tr>
+        }
+    </table>
+</div>

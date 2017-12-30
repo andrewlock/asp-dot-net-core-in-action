@@ -1,0 +1,16 @@
+﻿@model RecentTasksViewModel
+@{
+    ViewData["Title"] = "All tasks";
+}
+
+<h2>Most recent @Model.NumberOfToDos Tasks: </h2>
+
+<div class="row">
+    <div class="col-md-12">
+        @foreach (var item in Model.ToDos)
+        {
+            @Html.Partial("_ToDo", item)
+            <a asp-action="View" asp-route-id="@item.Id">View Task</a>
+        }
+    </div>
+</div>

@@ -1,0 +1,16 @@
+﻿@model ToDoItemViewModel
+
+<p>
+    @if (Model.IsComplete)
+    {
+        <strong>Well done, you’re all done!</strong>
+    } else {
+        <strong>The following tasks remain:</strong>
+        <ul>
+            @foreach (var task in Model.Tasks)
+            {
+                <li>@task</li>
+            }
+        </ul>
+    }
+</p>

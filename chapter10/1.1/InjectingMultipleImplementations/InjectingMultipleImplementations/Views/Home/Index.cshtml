@@ -1,0 +1,8 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<h2>Send message through all registered senders</h2>
+<a asp-action="RegisterUser" asp-controller="MultiMessage" asp-route-username="Joe Bloggs" class="btn btn-default">Send Message</a>
+
+<h2>Send message through last registered sender</h2>
+<a asp-action="RegisterUser" asp-controller="SingleMessage" asp-route-username="Joe Bloggs" class="btn btn-default">Send Message</a>

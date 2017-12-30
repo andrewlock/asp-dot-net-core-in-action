@@ -1,0 +1,11 @@
+﻿@{
+    Layout = "_Layout";
+}
+<div class="row">
+<div class="main-content col-xs-8">
+    @RenderBody()
+</div>
+<div class="side-bar col-xs-4">
+    @RenderSection("Sidebar", required: true)
+</div>
+</div>

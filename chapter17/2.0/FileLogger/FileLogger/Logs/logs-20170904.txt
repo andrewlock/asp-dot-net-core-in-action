@@ -1,0 +1,6 @@
+2017-09-04 19:38:18.560 +01:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\Sock\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2017-09-04 19:38:19.084 +01:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request starting HTTP/1.1 GET http://localhost:65472/api/values  
+2017-09-04 19:38:19.168 +01:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executing action method FileLogger.Controllers.ValuesController.Get (FileLogger) with arguments ((null)) - ModelState is Valid
+2017-09-04 19:38:19.174 +01:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor: Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-09-04 19:38:19.206 +01:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executed action FileLogger.Controllers.ValuesController.Get (FileLogger) in 45.2242ms
+2017-09-04 19:38:19.210 +01:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request finished in 127.1231ms 200 application/json; charset=utf-8

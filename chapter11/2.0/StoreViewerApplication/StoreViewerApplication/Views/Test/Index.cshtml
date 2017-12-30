@@ -1,0 +1,43 @@
+@model StoreViewerApplication.Models.TestOptions
+
+<h4>Can Bind</h4>
+<dl>
+    <dt>@nameof(Model.Dictionary)</dt>
+    <dd>@string.Join(",", Model.Dictionary.Select(kvp => $"{kvp.Key}: {kvp.Value.Value}"))</dd>
+    <dt>@nameof(Model.List)</dt>
+    <dd>@string.Join(",", Model.List.Select(x => x.Value))</dd>
+    <dt>@nameof(Model.IDictionary)</dt>
+    <dd>@string.Join(",", Model.IDictionary.Select(kvp => $"{kvp.Key}: {kvp.Value.Value}"))</dd>
+    <dt>@nameof(Model.IEnumerable)</dt>
+    <dd>@string.Join(",", Model.IEnumerable.Select(x => x.Value))</dd>
+    <dt>@nameof(Model.ReadOnlyCollection)</dt>
+    <dd>@string.Join(",", Model.ReadOnlyCollection.Select(x => x.Value))</dd>
+    <dt>@nameof(Model.Integer)</dt>
+    <dd>@Model.Integer</dd>
+    <dt>@nameof(Model.Object)</dt>
+    <dd>@Model.Object.Value</dd>
+    <dt>@nameof(Model.ReadOnly)</dt>
+    <dd>@Model.ReadOnly.Value</dd>
+    <dt>@nameof(Model.String)</dt>
+    <dd>@Model.String</dd>
+</dl>
+
+<h4>Can't Bind</h4>
+<dl>
+    <dt>NotPublic</dt>
+    @*Can't list this as it's not public!  *@
+    @*  <dd>@Model.NotPublic</dd>*@
+    <dt>@nameof(Model.SetOnly)</dt>
+    <dd>@Model._setOnly?.Value</dd>
+    <dt>@nameof(Model.NullReadOnly)</dt>
+    <dd>@Model.NullReadOnly?.Value</dd>
+    <dt>@nameof(Model.NullPrivateSetter)</dt>
+    <dd>@Model.NullPrivateSetter?.Value</dd>
+    <dt>@nameof(Model.NullIEnumerable)</dt>
+    <dd>@(Model.NullIEnumerable == null ? null : string.Join(",", Model.NullIEnumerable.Select(x => x?.Value)))</dd>
+    <dt>@nameof(Model.ReadOnlyEnumerable)</dt>
+    <dd>@string.Join(",", Model.ReadOnlyEnumerable.Select(x => x.Value))</dd>
+    <dt>Indexer</dt>
+    @*Can't list this as itwill throw as not bound!  *@
+    @*<dd>@Model[0].Value</dd>*@
+</dl>

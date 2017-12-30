@@ -1,0 +1,27 @@
+﻿@model ICollection<RecipeSummaryViewModel>
+@{
+    ViewData["Title"] = "Menus";
+}
+
+<div class="table-responsive">
+    <table class="table table-striped recipe">
+        <thead>
+            <tr>
+                <th>Recipe</th>
+                <th>TimeToCook</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var recipe in Model)
+            {
+                <tr>
+                    <td>@recipe.Name</td>
+                    <td>@recipe.TimeToCook</td>
+                    <td><a asp-action="View" asp-route-id="@recipe.Id" class="btn">View</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<a asp-action="Create" class="btn btn-success">Create new Recipe</a>

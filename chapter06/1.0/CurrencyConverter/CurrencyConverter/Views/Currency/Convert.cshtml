@@ -1,0 +1,25 @@
+﻿@model CurrencyConverterModel
+@{
+    ViewData["Title"] = "Convert currency";
+}
+<h1>Convert values</h1>
+<p>Choose the values </p>
+
+<form asp-action="Convert">
+    <div class="form-group">
+        <label asp-for="CurrencyFrom"></label>
+        <input class="form-control" asp-for="CurrencyFrom" />
+        <span asp-validation-for="CurrencyFrom"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Quantity"></label>
+        <input class="form-control" asp-for="Quantity" />
+        <span asp-validation-for="Quantity"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CurrencyTo"></label>
+        <input class="form-control" asp-for="CurrencyTo" />
+        <span asp-validation-for="CurrencyTo"></span>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>

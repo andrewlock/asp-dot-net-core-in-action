@@ -1,0 +1,12 @@
+﻿@model List<SelectListItem>
+@{
+    ViewData["Title"] = "Select currencies";
+}
+<h1>Select currencies</h1>
+
+<form asp-action="ShowRates" method="post">
+    <div class="form-group">
+        <select multiple name="currencies" asp-items="Model" class="form-control"></select>
+    </div>
+    <button type="submit" name="action" class="btn btn-default">Filter</button>
+</form>

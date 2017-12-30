@@ -1,0 +1,10 @@
+﻿@model ToDoItemViewModel
+
+<p>
+    @if (Model.IsComplete)
+    {
+        <strong>This task is complete!</strong>
+    } else {
+        @Html.Partial("_ToDo")
+    }
+</p>

@@ -1,0 +1,14 @@
+﻿@model BalanceViewModel
+@{
+    ViewData["Title"] = "Your balance";
+}
+
+<h2>Your current balance is: <strong>@Model.Balance.ToString("c")</strong></h2>
+
+<form asp-action="Withdraw">
+    <div class="form-group">
+        <label >Amount to withdraw: </label>
+        <input type="number" min="1" step="1" class="form-control" name="amount" id="amount" required />
+    </div>
+    <button type="submit" class="btn btn-default">Withdraw funds</button>
+</form>

@@ -1,0 +1,24 @@
+﻿@model UpdateRecipeCommand
+@{
+    ViewData["Title"] = "Edit Recipe";
+}
+
+<h2>@ViewData["Title"]</h2>
+<hr />
+
+<form asp-controller="Recipe" asp-action="Edit" method="post" class="form-horizontal">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    @Html.Partial("_EditRecipePartial")
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

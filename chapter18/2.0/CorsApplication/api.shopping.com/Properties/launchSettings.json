@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "api.shopping.com": {
+      "commandName": "Project",
+      "launchBrowser": false,
+      "launchUrl": "api/products",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "http://*:5111/"
+      },
+      "applicationUrl": "http://localhost:5111/"
+    }
+  }
+}

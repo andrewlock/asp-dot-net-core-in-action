@@ -1,0 +1,17 @@
+﻿@model IEnumerable<ToDoItemViewModel>
+@{
+    ViewData["Title"] = "All tasks";
+}
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Tasks: </h2>
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li><a asp-action="View" asp-route-id="@item.Id">@string.Join(", ", item.Tasks)</a></li>
+            }
+        </ul>
+    </div>
+</div>

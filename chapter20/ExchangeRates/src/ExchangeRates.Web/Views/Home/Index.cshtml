@@ -1,0 +1,36 @@
+﻿@model ConvertViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<p>Enter values and click convert</p>
+<div class="row">
+    <div class="col-sm-8">
+        <form asp-action="Index" method="post">
+            <div class="form-group">
+                <label asp-for="Value"></label>
+                <input asp-for="Value" class="form-control"/>
+                <span asp-validation-for="Value"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExchangeRate"></label>
+                <input asp-for="ExchangeRate" class="form-control" />
+                <span asp-validation-for="ExchangeRate"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DecimalPlaces"></label>
+                <input asp-for="DecimalPlaces" class="form-control" />
+                <span asp-validation-for="DecimalPlaces"></span>
+            </div>
+            <div class="form-group">
+                <span>= @Model.Result</span>
+            </div>
+            <button type="submit" class="btn btn-primary">Convert</button>
+            <div asp-validation-summary="ModelOnly"></div>
+        </form>
+    </div>
+</div>
+
+@section Scripts 
+{
+    @Html.Partial("_ValidationScriptsPartial")
+}

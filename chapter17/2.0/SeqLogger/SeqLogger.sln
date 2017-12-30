@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeqLogger", "SeqLogger\SeqLogger.csproj", "{34A593C5-B482-4AB3-A9D6-CA0C62B9CA65}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34A593C5-B482-4AB3-A9D6-CA0C62B9CA65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34A593C5-B482-4AB3-A9D6-CA0C62B9CA65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34A593C5-B482-4AB3-A9D6-CA0C62B9CA65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34A593C5-B482-4AB3-A9D6-CA0C62B9CA65}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {702D1392-AE66-49D9-8986-AC4FCA3F278B}
+	EndGlobalSection
+EndGlobal

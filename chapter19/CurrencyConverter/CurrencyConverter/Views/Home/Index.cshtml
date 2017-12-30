@@ -1,0 +1,33 @@
+﻿@model CurrencyConverterModel
+@inject ICurrencyProvider provider
+@{
+    ViewData["Title"] = "Currency converter";
+}
+
+<h1>Click submit to make a request, and see the results</h1>
+
+<form method="post">
+    <p>Valid Currencies: @string.Join(",", provider.GetCurrencies())</p>
+    <div class="form-group">
+        <label asp-for="CurrencyFrom"></label>
+        <input asp-for="CurrencyFrom" class="form-control" />
+        <span asp-validation-for="CurrencyFrom"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CurrencyTo"></label>
+        <input asp-for="CurrencyTo" class="form-control" />
+        <span asp-validation-for="CurrencyTo"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Quantity"></label>
+        <input asp-for="Quantity" class="form-control" />
+        <span asp-validation-for="Quantity"></span>
+    </div>
+    <div asp-validation-summary="ModelOnly"></div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+@section scripts
+{
+    @Html.Partial("_ValidationScriptsPartial")
+}

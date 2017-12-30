@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Choose one of the options below to see how lifetime affects the values</h2>
+<h4>Refresh the page to see the values change (or stay the same!)</h4>
+<a asp-controller="RowCount" asp-action="Transient" class="btn btn-default">Transient services</a>
+<a asp-controller="RowCount" asp-action="Scoped" class="btn btn-default">Scoped services</a>
+<a asp-controller="RowCount" asp-action="Singleton" class="btn btn-default">Singleton services</a>
+
+<h4>The following example shows a captured dependency - the data context is a scoped service so should be different every request, but the singleton repository "captures" it.</h4>
+<a asp-controller="Capturing" asp-action="Captured" class="btn btn-default">Singleton repository and scoped data context</a>

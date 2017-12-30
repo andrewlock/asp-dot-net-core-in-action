@@ -1,0 +1,21 @@
+@using Microsoft.AspNetCore.Identity
+@using Airport.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <h5><i>Current user's claims:</i></h5>
+    <dl>
+        @foreach(var claim in User.Claims)
+        {
+            <dt>@claim.Type</dt>
+            <dd>@claim.Value</dd>
+        }
+    </dl>
+}
+else
+{
+    <p><i>Not currently logged in</i></p>
+}

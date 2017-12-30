@@ -1,0 +1,34 @@
+﻿@model UserBindingModel
+@{
+    ViewData["Title"] = "Save user";
+}
+<h1>Checkout</h1>
+<p>Enter the values and click Submit</p>
+<form asp-action="SaveUser">
+    <div class="form-group">
+        <label asp-for="FirstName"></label>
+        <input class="form-control" asp-for="FirstName" />
+        <span asp-validation-for="FirstName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName"></label>
+        <input class="form-control" asp-for="LastName" />
+        <span asp-validation-for="LastName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input class="form-control" asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PhoneNumber"></label>
+        <input class="form-control" asp-for="PhoneNumber" />
+        <span asp-validation-for="PhoneNumber"></span>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+@section Scripts
+{
+    @Html.Partial("_ValidationScriptsPartial")
+}

@@ -1,0 +1,44 @@
+﻿@model SelectListsViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Your values:</h2>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="form-group">
+            <label>Standard dropdown</label>
+            <span>@Model.SelectedValue1</span>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label>Single item list box</label>
+            <span>@Model.SelectedValue2</span>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label>Multi item list box</label>
+            <ul>
+                @foreach (var item in Model.MultiValues1)
+                {
+                    <li>@item</li>
+                }
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label>List box with Groups </label>
+            <ul>
+                @foreach (var item in Model.MultiValues2)
+                {
+                    <li>@item</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
