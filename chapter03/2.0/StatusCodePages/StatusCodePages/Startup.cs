@@ -25,7 +25,7 @@ namespace StatusCodePages
 
         public void Configure(IApplicationBuilder app)
         {
-            app.UseExceptionHandler("/Home/Missing");
+            app.UseStatusCodePagesWithReExecute("/Home/Missing");
 
             app.UseStaticFiles();
 
